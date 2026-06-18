@@ -286,22 +286,6 @@ export default function App() {
     }
   };
 
-  const PROTECTED_PATHS = ['/courses','/about','/assessment','/admissions','/insights','/contact','/checkout'];
-
-  if (!authChecked) {
-    return (
-      <div style={{ minHeight: '100vh', background: '#030712', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: '40px', height: '40px', border: '3px solid rgba(20,184,166,0.2)', borderTop: '3px solid #14b8a6', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-        <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
-      </div>
-    );
-  }
-
-  const isProtected = PROTECTED_PATHS.some(p => currentPath === p || currentPath.startsWith(p + '/') || currentPath.startsWith(p + '?'));
-
-  if (isProtected && !authUser) {
-    return <LoginPage onLoginSuccess={handleLoginSuccess} onNavigate={setCurrentPath} />;
-  }
 
   return (
     <div id="tsoc-portal" className="min-h-screen max-w-full overflow-x-hidden bg-transparent text-slate-900 flex flex-col antialiased">
