@@ -1,0 +1,20 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+
+# Environment secrets — never commit
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Runtime data files with user/session info
+users.json
+sessions.json
+admissions.json
+
+# Keep the example template
+!.env.example

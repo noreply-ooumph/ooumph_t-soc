@@ -1,0 +1,6 @@
+{
+  "name": "T-SOC Design System",
+  "description": "Deterministic Design System Specification, Brand Guidelines, and the fully functional executive Payment Registry Portal for Trust School of Communications.",
+  "requestFramePermissions": ["microphone", "camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

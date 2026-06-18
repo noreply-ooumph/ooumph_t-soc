@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5c842;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4a017;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a7bd5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3a6e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7d060;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8930a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon: Left blue leaf/wing -->
+  <path d="M50 78 C30 65, 18 45, 32 22 C38 14, 46 10, 50 50 Z" fill="url(#blueGrad)" opacity="0.95"/>
+  <!-- Icon: Right gold leaf/wing -->
+  <path d="M50 78 C70 65, 82 45, 68 22 C62 14, 54 10, 50 50 Z" fill="url(#goldGrad)" opacity="0.95"/>
+
+  <!-- Center top figure (gold circle head) -->
+  <circle cx="50" cy="13" r="6" fill="url(#goldGrad2)"/>
+  <!-- Center top figure body arc -->
+  <path d="M44 20 Q50 30 56 20" stroke="url(#goldGrad2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Left figure (blue) -->
+  <circle cx="33" cy="42" r="4.5" fill="#3a7bd5"/>
+  <path d="M28 49 Q33 57 38 49" stroke="#3a7bd5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Right figure (gold) -->
+  <circle cx="67" cy="42" r="4.5" fill="url(#goldGrad2)"/>
+  <path d="M62 49 Q67 57 72 49" stroke="url(#goldGrad2)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Ground shadow -->
+  <ellipse cx="50" cy="84" rx="22" ry="3" fill="#c8a400" opacity="0.18"/>
+
+  <!-- T-SOC text in bold square font -->
+  <text x="102" y="62"
+    font-family="'Arial Black', 'Impact', 'Franklin Gothic Heavy', sans-serif"
+    font-size="46"
+    font-weight="900"
+    letter-spacing="2"
+    fill="url(#goldGrad)">T-SOC</text>
+
+  <!-- Subtitle -->
+  <text x="104" y="80"
+    font-family="'Arial', sans-serif"
+    font-size="10"
+    font-weight="600"
+    letter-spacing="3.5"
+    fill="#1a3a6e">TRUST SCHOOL OF COMMUNICATIONS</text>
+</svg>

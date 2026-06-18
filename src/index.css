@@ -1,0 +1,2153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50: #f8fafc;
+  --color-navy-100: #f1f5f9;
+  --color-navy-200: #e2e8f0;
+  --color-navy-300: #cbd5e1;
+  --color-navy-400: #94a3b8;
+  --color-navy-500: #64748b;
+  --color-navy-600: #475569;
+  --color-navy-700: #334155;
+  --color-navy-800: #1e293b; 
+  --color-navy-900: #0f172a; 
+  --color-navy-950: #f8fafc;
+
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569; 
+  --color-slate-705: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #0d9488;
+  --color-teal-400: #0d9488;
+  --color-teal-500: #0f766e; 
+  --color-teal-600: #0f766e;
+  --color-teal-700: #115e59;
+  --color-teal-800: #134e4a;
+  --color-teal-900: #115e59;
+
+  --color-status-success: #166534;
+  --color-status-warning: #9a3412;
+  --color-status-error: #991b1b;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --animate-fade-in-up: fade-in-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-right: fade-in-right 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-slow: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* ==========================================
+   SOOTHING, EYE-CATCHING AND SOOTHING PREMIUM LIGHT THEME
+   ========================================== */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at 10% 20%, #f2fdfa 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, #fafbef 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, #fcfcf9 0%, transparent 70%),
+              #f8fafc !important;
+  color: #0f172a !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.dark, html.dark body {
+  background: radial-gradient(circle at 10% 20%, #081125 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, #080d19 0%, transparent 45%),
+              #050b18 !important;
+  color: #f1f5f9 !important;
+}
+
+#tsoc-portal, .min-h-screen {
+  background: transparent !important;
+  color: #0f172a !important;
+}
+
+main {
+  background: transparent !important;
+}
+
+/* Base scrollbar restyle with soft indications */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+/* ==========================================
+   CONVERTING DARK UTILITIES TO HIGH-END LIGHT INTERFACES
+   ========================================== */
+
+/* General Classy Boldness Rule: Ensures headings, brand indicators, and metrics look classy, crisp and authoritative */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
+  letter-spacing: -0.021em !important;
+  color: #0f172a !important; /* Premium Slate Charcoal */
+}
+
+h1, h2, .text-2xl, .text-3xl, .text-4xl, .text-5xl {
+  font-weight: 800 !important;
+}
+
+strong, b {
+  font-weight: 700 !important;
+}
+
+/* Let tailwind classes govern weight and color for inline structures naturally */
+.font-extrabold { font-weight: 800 !important; }
+.font-black { font-weight: 900 !important; }
+.font-bold { font-weight: 700 !important; }
+.font-semibold { font-weight: 600 !important; }
+
+/* Ensure solid action buttons, orange badges, progress states, and success shields keep pristine white text contrast */
+button.bg-teal-600,
+button.bg-teal-700,
+button.bg-\[rgba\(232\,96\,28\,1\)\] ,
+button.bg-\[\#e8601c\],
+button.bg-orange-600,
+button.bg-emerald-600,
+.bg-teal-600,
+.bg-teal-650,
+.bg-\[\#e8601c\],
+.bg-orange-600,
+.bg-emerald-600,
+.bg-teal-600 *,
+.bg-teal-650 *,
+.bg-\[\#e8601c\] *,
+.bg-orange-600 *,
+.bg-emerald-600 *,
+span.bg-\[\#e8601c\],
+span.bg-emerald-600,
+span.bg-orange-600,
+span.bg-teal-600,
+#habitline-nav .bg-teal-650,
+#habitline-nav .bg-teal-650 * {
+  color: #ffffff !important;
+}
+
+/* Main Containers (Outer pages like Landing, Admissions, Contacts) */
+.bg-\[\#050b18\],
+.bg-\[\#050b18\]\/95 {
+  background-color: transparent !important; /* Let body gradients shine */
+}
+
+/* Outer layout panels that need solid background spacing */
+.bg-\[\#050b18\]:not(#tsoc-portal),
+.bg-\[\#030712\].py-2 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* 1. Header Billboards, Major Widget Cards & High-Impact Section Hero blocks (Curriculum, Scheduler, etc.) */
+.bg-\[\#091122\]\/95,
+.bg-\[\#091122\]\/90,
+.bg-\[\#091122\],
+.bg-\[\#030712\]\/60,
+.bg-\[\#080d19\]\/90,
+.bg-\[\#080d19\]\/80,
+.bg-\[\#080d19\],
+.bg-\[\#0c101c\],
+.bg-gradient-to-br.from-\[\#0c101c\] {
+  background: linear-gradient(135deg, #ffffff 0%, #f6fbfb 50%, #eaf5f2 100%) !important;
+  border: 1px solid rgba(13, 148, 136, 0.12) !important;
+  box-shadow: 0 10px 40px -12px rgba(15, 23, 42, 0.05), 
+              0 1px 3px rgba(15, 23, 42, 0.01) !important;
+  color: #1e293b !important;
+}
+
+/* Adapt specific mini-dark banners / blocks to consistent light-surface branding */
+.bg-\[\#0d1017\],
+.bg-\[\#12141c\],
+.bg-\[\#12141c\]\/90 {
+  background: #f8fafc !important;
+  background-color: #f8fafc !important;
+  border: 1px solid rgba(234, 88, 12, 0.25) !important;
+  box-shadow: 0 4px 20px -5px rgba(234, 88, 12, 0.08) !important;
+}
+.bg-\[\#0d1017\] *,
+.bg-\[\#12141c\] *,
+.bg-\[\#12141c\]\/90 * {
+  color: #334155 !important;
+}
+
+/* Card hover glow transitions adapted to the beautiful high-end theme */
+.hover\:shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.5\)\]:hover,
+.hover\:shadow-\[0_22px_45px_rgba\(20\,184\,166\,0\.12\)\]:hover,
+.hover\:shadow-\[0_20px_40px_rgba\(20\,184\,166\,0\,15\)\]:hover,
+.hover\:shadow-2xl:hover {
+  box-shadow: 0 20px 40px -12px rgba(13, 148, 136, 0.12), 
+              0 0 0 1px rgba(13, 148, 136, 0.1) !important;
+  border-color: rgba(13, 148, 136, 0.25) !important;
+}
+
+/* Ensure nested children in widget cards inherit clean dark readability instead of staying stark white */
+.bg-\[\#091122\]\/95 *, .bg-\[\#091122\]\/90 *, .bg-\[\#091122\] *,
+.bg-\[\#080d19\]\/90 *, .bg-\[\#080d19\] *, .bg-\[\#0c101c\] * {
+  color: #1e293b !important;
+}
+
+/* Headings and explicit white-text blocks inside card widgets converted to light background */
+.bg-\[\#091122\]\/95 .text-white,
+.bg-\[\#091122\]\/90 .text-white,
+.bg-\[\#091122\] .text-white,
+.bg-\[\#080d19\]\/90 .text-white,
+.bg-\[\#080d19\] .text-white,
+.bg-\[\#0c101c\] .text-white,
+.bg-gradient-to-br.from-\[\#0c101c\] .text-white,
+.bg-\[\#091122\]\/90 h1, .bg-\[\#091122\]\/90 h2, .bg-\[\#091122\]\/90 h3, .bg-\[\#091122\]\/90 h4,
+.bg-\[\#080d19\]\/90 h1, .bg-\[\#080d19\]\/90 h2, .bg-\[\#080d19\]\/90 h3, .bg-\[\#080d19\]\/90 h4,
+.bg-\[\#0c101c\] h4, .bg-\[\#0c101c\] h3,
+/* Headings on main light-theme wrapper pages */
+#hero-habitline .text-white,
+#hero-habitline h1,
+#curriculum-track h2,
+#systemSpecs-header h1,
+#contact-desk h1,
+section h1.text-white,
+section h2.text-white,
+section h3.text-white,
+.text-slate-200.font-sans h1.text-white,
+.text-slate-200.font-sans h2.text-white {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+/* 2. Outer border lines: converting harsh dark lines to soft details */
+.border-white\/5,
+.border-white\/10,
+.border-white\/15,
+.border-white\/20,
+.border-white\/30,
+.border-navy-900,
+.border-slate-800,
+.border-navy-990 {
+  border-color: rgba(15, 23, 42, 0.07) !important;
+}
+
+/* 3. THE MAGIC BULLET: Inner metadata containers (Hours, Scholars, form sections) */
+.bg-\[\#030712\],
+.bg-\[\#030712\]\/90,
+.bg-\[\#030712\]\/95,
+.bg-\[\#030712\]\/85,
+.bg-\[\#030712\]\/70,
+.bg-\[\#030712\]\/60,
+.bg-navy-950,
+.bg-navy-950\/40,
+.bg-navy-950\/60,
+.bg-navy-950\/80,
+.bg-\[\#050b18\]\/90,
+.bg-\[\#080d1a\],
+.bg-\[\#0a101f\]\/90 {
+  background-color: #f1f5f9 !important;
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: inset 0 2px 4px 0 rgba(15, 23, 42, 0.02) !important;
+}
+
+/* Nesting support inside inner container panels */
+.bg-\[\#030712\] *,
+.bg-\[\#030712\]\/90 *,
+.bg-\[\#030712\]\/95 *,
+.bg-\[\#030712\]\/85 *,
+.bg-\[\#030712\]\/70 *,
+.bg-\[\#030712\]\/60 *,
+.bg-navy-950 *,
+.bg-navy-950\/40 *,
+.bg-navy-950\/60 *,
+.bg-navy-950\/80 *,
+.bg-\[\#050b18\]\/90 * {
+  color: #334155 !important;
+}
+
+/* Saturated numbers, icons, links inside metadata boxes stay bright */
+.bg-\[\#030712\] .text-teal-400,
+.bg-\[\#030712\]\/90 .text-teal-400,
+.bg-\[\#030712\]\/85 .text-teal-400,
+.bg-\[\#030712\]\/70 .text-teal-400,
+.bg-\[\#030712\]\/60 .text-teal-400,
+.bg-\[\#030712\] .text-emerald-400,
+.bg-\[\#030712\]\/90 .text-emerald-400,
+.bg-\[\#030712\]\/85 .text-emerald-400,
+.bg-\[\#030712\]\/70 .text-emerald-400,
+.bg-\[\#030712\]\/60 .text-emerald-400,
+.bg-navy-950\/60 .text-teal-400,
+.text-teal-400 {
+  color: #0d9488 !important;
+}
+
+/* Advisory titles inside scheduling alerts */
+.bg-\[\#030712\]\/90 strong,
+.bg-\[\#030712\]\/90 .text-white {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* Micro-chips, header badge pills and orange-themed metadata structures */
+.bg-\[\#132549\]\/40,
+.bg-\[\#e8601c\]\/10,
+.bg-orange-500\/10 {
+  background-color: #fff7ed !important;
+  background: #fff7ed !important;
+  border: 1px solid rgba(234, 88, 12, 0.2) !important;
+}
+.bg-\[\#132549\]\/40,
+.bg-\[\#e8601c\]\/10,
+.bg-orange-500\/10,
+.bg-\[\#132549\]\/40 *,
+.bg-\[\#e8601c\]\/10 *,
+.bg-orange-500\/10 * {
+  color: #ea580c !important;
+  font-weight: 700 !important;
+}
+
+/* Classy Dark Diagnostic Viewport overlay inside Analyzer Deck - preserves high-contrast scope look */
+.h-28.bg-\[\#030712\],
+.h-28.bg-\[\#030712\]\/90 {
+  background: #020617 !important;
+  background-color: #020617 !important;
+  border-color: rgba(13, 148, 136, 0.25) !important;
+}
+.h-28.bg-\[\#030712\] *,
+.h-28.bg-\[\#030712\]\/90 * {
+  color: #2dd4bf !important;
+}
+.h-28.bg-\[\#030712\] .text-white {
+  color: #ffffff !important;
+}
+
+/* Premium Light Gradient container override for Admissions, Persona Tabs, & Courses */
+.max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfd 50%, #f0faf8 100%) !important;
+  border: 1px solid rgba(13, 148, 136, 0.12) !important;
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.05) !important;
+}
+.max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] * {
+  color: #1e293b !important;
+}
+.max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+.max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] .persona-image-overlay {
+  display: none !important;
+}
+.max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] h4 {
+  color: #0f172a !important;
+}
+
+/* Inactive and Active Persona switching buttons */
+button[id^="persona-tab-"][class*="bg-[#080d19]/90"],
+button[id^="persona-tab-"][class*="text-slate-400"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+button[id^="persona-tab-"][class*="bg-[#080d19]/90"]:hover,
+button[id^="persona-tab-"][class*="text-slate-400"]:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+button[id^="persona-tab-"][class*="bg-white"] {
+  background-color: #ccfbf1 !important;
+  color: #0d9488 !important;
+  border-color: rgba(13, 148, 136, 0.25) !important;
+  box-shadow: 0 4px 12px -2px rgba(13, 148, 136, 0.15) !important;
+}
+
+/* Interactive Active Scheduler Card element override */
+button[id^="scheduler-task-"][class*="bg-orange-600"] {
+  background-color: #fff7ed !important;
+  background: #fff7ed !important;
+  border-color: #ea580c !important;
+  color: #ea580c !important;
+}
+button[id^="scheduler-task-"][class*="bg-orange-600"] * {
+  color: #ea580c !important;
+}
+button[id^="scheduler-task-"][class*="bg-orange-600"] p {
+  color: #475569 !important;
+}
+
+/* Gentle Reminders push bulletin card button overrides */
+[id^="reminder-card-"] button.bg-\[\#f5f5f5\] {
+  background-color: #0d9488 !important;
+  color: #ffffff !important;
+}
+[id^="reminder-card-"] button.border-white\/10 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+/* ==========================================
+   INTERACTIVE ACTION BUTTON CONTRAST ENHANCEMENTS
+   ========================================== */
+
+/* 1. Watch Methodology Demo Button - Contrast Optimization */
+#btn-watch-dem {
+  background-color: #f1f5f9 !important; /* Soft, readable light grey button back in light mode */
+  border: 1px solid #cbd5e1 !important; /* Subtle border to frame it */
+  color: #0f172a !important;            /* Pure high-contrast dark text */
+}
+
+#btn-watch-dem:hover {
+  background-color: #e2e8f0 !important; /* Elegant hover transition */
+  border-color: #94a3b8 !important;
+}
+
+#btn-watch-dem svg {
+  fill: #0f172a !important;             /* High contrast play icon fill */
+  stroke: #0f172a !important;
+}
+
+#btn-watch-dem span {
+  color: #0f172a !important;            /* Force span text contrast */
+}
+
+/* Dark mode overrides for Watch Demo Button */
+html.dark #btn-watch-dem {
+  background-color: rgba(255, 255, 255, 0.08) !important; /* Elegant dark-mode transparent white background */
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;                              /* Perfect white text contrast */
+}
+
+html.dark #btn-watch-dem:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html.dark #btn-watch-dem svg {
+  fill: #ffffff !important;                              /* White icon in dark mode */
+  stroke: #ffffff !important;
+}
+
+html.dark #btn-watch-dem span {
+  color: #ffffff !important;
+}
+
+/* 2. Start Tracking Action Button - High Contrast Optimization */
+#hero-habitline #btn-free-tracking,
+#btn-free-tracking {
+  background-color: #e8601c !important; /* Retain premium solid brand orange */
+  color: #ffffff !important;            /* High accessibility crisp white text */
+}
+
+#hero-habitline #btn-free-tracking:hover,
+#btn-free-tracking:hover {
+  background-color: #ffffff !important;
+  color: #0f172a !important;            /* High transition contrast on hover */
+}
+
+/* Dark mode overrides for Start Tracking Button */
+html.dark #hero-habitline #btn-free-tracking,
+html.dark #btn-free-tracking {
+  background-color: #e8601c !important;
+  color: #ffffff !important;
+}
+
+html.dark #hero-habitline #btn-free-tracking:hover,
+html.dark #btn-free-tracking:hover {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================
+   FLOATING PILL NAVIGATION BAR REGRADE
+   ========================================== */
+
+#habitline-nav {
+  background-color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05),
+              0 1px 3px rgba(15, 23, 42, 0.02) !important;
+}
+
+/* Capsule center segment in Navbar */
+#habitline-nav .hidden.md\:flex {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Inactive nav buttons mapped to highly legible dark gray */
+#habitline-nav .text-slate-400 {
+  color: #55647a !important;
+}
+#habitline-nav .text-slate-400:hover {
+  color: #0f172a !important;
+}
+
+/* Active Nav Button */
+.bg-teal-950\/80 {
+  background-color: #ccfbf1 !important;
+  color: #0d9488 !important;
+  border-color: rgba(13, 148, 136, 0.2) !important;
+  box-shadow: 0 2px 8px -2px rgba(13, 148, 136, 0.12) !important;
+}
+.bg-teal-950\/80 * {
+  color: #0d9488 !important;
+  font-weight: 755 !important;
+}
+
+/* Left Logo Brand Elements */
+#habitline-nav .text-white {
+  color: #0f172a !important;
+}
+#habitline-nav h1 {
+  color: #0f172a !important;
+}
+
+/* Nav Micro-Control Small Round Buttons (CTA Button 1 & 2) */
+#habitline-nav button.hidden.sm\:flex,
+#habitline-nav button.w-10 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+#habitline-nav button.hidden.sm\:flex:hover,
+#habitline-nav button.w-10:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Enrol Desk main button - elegant deep teal block */
+#habitline-nav .bg-teal-650 {
+  background-color: #0d9488 !important;
+  color: #ffffff !important;
+  font-weight: 755 !important;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25) !important;
+}
+#habitline-nav .bg-teal-650:hover {
+  background-color: #0f766e !important;
+  box-shadow: 0 4px 18px rgba(13, 148, 136, 0.4) !important;
+}
+
+/* ==========================================
+   IMMERSIVE NAVIGATION OVERLAY (SWISS DESIGN CORES)
+   ========================================== */
+
+#full-menu-overlay {
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.99) 0%, rgba(15, 118, 110, 0.99) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+}
+#full-menu-overlay *,
+#full-menu-overlay h1, 
+#full-menu-overlay span,
+#full-menu-overlay p {
+  color: #ffffff !important;
+}
+#full-menu-overlay .group:hover * {
+  color: #e6fffa !important;
+  opacity: 1 !important;
+}
+
+/* Full Mobile Menu Overlay Reset - Ensure links are transparent & legible, resolved white-on-white bug */
+#full-menu-overlay button {
+  background-color: transparent !important;
+  background: transparent !important;
+  border-width: 0px !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+  color: #ffffff !important;
+  width: 100% !important;
+}
+#full-menu-overlay button:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.4) !important;
+}
+#full-menu-overlay button * {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   ACCURATE TEXT BLOCKS REDIRECTS FOR CONTRAST
+   ========================================== */
+
+/* Neutral text translation — bumped darker for WCAG AA compliance on light backgrounds */
+.text-slate-100 { color: #0f172a !important; }
+.text-slate-200 { color: #0f172a !important; }      /* was #1e293b — max legibility */
+.text-slate-300 { color: #1e293b !important; }      /* was #334155 — strong contrast */
+.text-slate-450 { color: #334155 !important; }      /* was #475569 */
+.text-slate-550 { color: #334155 !important; }      /* was #475569 */
+.text-\[\#cbd5e0\], .text-\[\#a0aec0\] { color: #1e293b !important; }
+
+/* Secondary text: high enough contrast on white (#334155 = 8.4:1) */
+.text-slate-400 {
+  color: #334155 !important;    /* was #475569 — now 8.4:1 on white */
+  font-weight: 550 !important;
+}
+.text-slate-550 {
+  color: #334155 !important;    /* was #475569 */
+  font-weight: 550 !important;
+}
+.text-slate-500 {
+  color: #475569 !important;    /* was #64748b — now 5.9:1 on white */
+  font-weight: 550 !important;
+}
+
+/* Credibility Accents Saturated Green-teals */
+.text-teal-300,
+.text-teal-450,
+.text-\[\#0D9488\],
+.text-emerald-300 {
+  color: #0d9488 !important;
+}
+
+/* Fix: text-emerald-400 on light backgrounds is near-invisible (#34d399 on white = 1.7:1) */
+/* More specific dark-background rules below still override this */
+.text-emerald-400 {
+  color: #059669 !important;  /* emerald-600: 4.6:1 on white — passes AA */
+}
+
+/* Fix: text-rose-450 is used for error states but is not a standard Tailwind class */
+.text-rose-450 {
+  color: #e11d48 !important;  /* rose-600: high contrast on light backgrounds */
+}
+
+/* Delicate micro Highlight Badges */
+.bg-teal-500\/10 {
+  background-color: #eafaf6 !important;
+  border-color: #bbf7ec !important;
+  color: #0d9488 !important;
+}
+.bg-teal-500\/10 * {
+  color: #0d9488 !important;
+}
+
+/* Orange and Warning Badges */
+.text-orange-400,
+.text-orange-500,
+.text-orange-550,
+.text-\[\#e8601c\] {
+  color: #ea580c !important;
+}
+.bg-orange-500\/10,
+.bg-orange-100 {
+  background-color: #fffaf0 !important;
+  border-color: #fed7aa !important;
+}
+
+/* ==========================================
+   INTERACTIVE INPUT DESIGN SYSTEM
+   ========================================== */
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #0d9488 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
+}
+option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Close buttons inside popups and modals */
+.fixed button,
+.absolute button {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+.fixed button:hover,
+.absolute button:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Custom Program Customizer Steps indicators */
+.bg-teal-505\/5,
+.bg-teal-505\/20 {
+  background-color: #eafaf6 !important;
+  border-color: #99f6e4 !important;
+}
+
+/* Acquisitions sub buttons */
+.bg-teal-500\/10.font-mono {
+  background-color: #eafaf6 !important;
+  border-color: rgba(13, 148, 136, 0.2) !important;
+  color: #0d9488 !important;
+}
+.bg-teal-500\/10.font-mono:hover {
+  background-color: #0d9488 !important;
+  color: #ffffff !important;
+}
+.bg-teal-500\/10.font-mono:hover * {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   STRESS GRAPH & EXPERTS MODALS CORRECTIONS
+   ========================================== */
+
+/* Experts modal */
+.fixed.inset-0.z-50.flex.items-center {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.bg-slate-900 {
+  background-color: #f1f5f9 !important;
+}
+.bg-\[\#050b18\]\/40 {
+  background-color: rgba(241, 245, 249, 0.5) !important;
+}
+.bg-\[\#e8601c\]\/40 {
+  background-color: rgba(234, 88, 12, 0.12) !important;
+}
+
+/* ==========================================
+   PHONE MOCKUP BOUNDARIES & CONTRAST CALIBRATION
+   ========================================== */
+
+/* 1. Rigid border lines representing physical high-tech elegant devices */
+#phone-mockup-frame,
+#phone-mockup-bottom {
+  background-color: #030712 !important; /* Premium Matte Obsidian device backing */
+  background: #030712 !important;
+  border-color: #0f172a !important; /* Pure onyx bezel */
+  border-style: solid !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 45px 95px -20px rgba(15, 23, 42, 0.4),
+              0 15px 35px -10px rgba(232, 96, 28, 0.15),
+              inset 0 0 0 1.5px rgba(255, 255, 255, 0.25) !important;
+}
+
+#phone-mockup-frame {
+  border-width: 10px !important;
+  border-bottom-width: 14px !important;
+}
+
+#phone-mockup-bottom {
+  border-width: 4px !important;
+  border-bottom-width: 8px !important;
+}
+
+/* 2. Specific color reset for ALL phone screen children to bypass global light-theme text overrides */
+#phone-mockup-frame *,
+#phone-mockup-bottom * {
+  color: #f1f5f9 !important; /* Default crisp off-white for body text — !important to override global text-slate-* changes */
+}
+
+/* 3. Re-enhance specific text classes for high legibility inside phone screens */
+#phone-mockup-frame .text-white,
+#phone-mockup-bottom .text-white,
+#phone-mockup-frame h4,
+#phone-mockup-bottom h4 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+#phone-mockup-frame .text-slate-400,
+#phone-mockup-bottom .text-slate-400,
+#phone-mockup-frame .text-slate-450,
+#phone-mockup-bottom .text-slate-450 {
+  color: #94a3b8 !important; /* Proper high-contrast gray for details */
+}
+
+#phone-mockup-frame .text-slate-300,
+#phone-mockup-bottom .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+#phone-mockup-frame .text-[#e8601c],
+#phone-mockup-bottom .text-[#e8601c],
+#phone-mockup-frame .text-orange-500,
+#phone-mockup-bottom .text-orange-500,
+#phone-mockup-frame .text-orange-550,
+#phone-mockup-bottom .text-orange-550 {
+  color: #ff8e4f !important; /* Stunning sunset orange */
+  font-weight: 800 !important;
+}
+
+#phone-mockup-frame .text-teal-400,
+#phone-mockup-bottom .text-teal-400 {
+  color: #2dd4bf !important; /* Bright Turquoise */
+  font-weight: 800 !important;
+}
+
+#phone-mockup-frame .text-emerald-400,
+#phone-mockup-bottom .text-emerald-400,
+#phone-mockup-frame .text-emerald-440,
+#phone-mockup-bottom .text-emerald-440 {
+  color: #34d399 !important; /* Solid Mint Green state */
+  font-weight: 800 !important;
+}
+
+#phone-mockup-frame .bg-slate-[900,950],
+#phone-mockup-frame .bg-slate-900,
+#phone-mockup-bottom .bg-slate-900 {
+  background-color: #030712 !important;
+  background: #030712 !important;
+}
+
+/* 4. Protect telemetry card elements inside the screen */
+.telemetry-dark-card,
+#phone-mockup-frame .telemetry-dark-card,
+#phone-mockup-bottom .telemetry-dark-card {
+  background-color: #0a0e1a !important; /* Deep matte cosmic steel */
+  background: #0a0e1a !important;
+  border: 1px solid rgba(234, 88, 12, 0.35) !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.telemetry-dark-card *,
+#phone-mockup-frame .telemetry-dark-card *,
+#phone-mockup-bottom .telemetry-dark-card * {
+  color: #94a3b8 !important; /* Muted Slate gray guides */
+}
+
+/* Specific properties to override nested telemetry content */
+.telemetry-dark-card span,
+.telemetry-dark-card p,
+.telemetry-dark-card div,
+#phone-mockup-frame .telemetry-dark-card span,
+#phone-mockup-frame .telemetry-dark-card p,
+#phone-mockup-frame .telemetry-dark-card div,
+#phone-mockup-bottom .telemetry-dark-card span,
+#phone-mockup-bottom .telemetry-dark-card p,
+#phone-mockup-bottom .telemetry-dark-card div {
+  color: #e2e8f0 !important; /* High readability content lines */
+}
+
+/* Highlighted labels inside the metrics board */
+.telemetry-dark-card .font-bold.text-white,
+.telemetry-dark-card .text-white,
+#phone-mockup-frame .telemetry-dark-card .text-white,
+#phone-mockup-bottom .telemetry-dark-card .text-white {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.telemetry-dark-card .text-teal-400,
+#phone-mockup-frame .telemetry-dark-card .text-teal-400 {
+  color: #2dd4bf !important;
+}
+
+.telemetry-dark-card .text-\[\#e8601c\],
+#phone-mockup-frame .telemetry-dark-card .text-\[\#e8601c\] {
+  color: #ff8e4f !important;
+}
+
+.telemetry-dark-card .text-orange-500,
+#phone-mockup-frame .telemetry-dark-card .text-orange-500 {
+  color: #ff8e4f !important;
+}
+
+/* 5. Specific overrides for left floating card (milestone) */
+.float-left-card,
+#hero-mockup-stack .float-left-card {
+  background-color: #0a0e1a !important;
+  background: #0a0e1a !important;
+  border: 1px solid rgba(232, 96, 28, 0.35) !important;
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.8), 
+              0 0 35px rgba(232, 96, 28, 0.15) !important;
+}
+
+.float-left-card *,
+#hero-mockup-stack .float-left-card * {
+  color: #cbd5e1 !important; /* Crisp readability */
+}
+
+.float-left-card h4,
+#hero-mockup-stack .float-left-card h4 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+.float-left-card p,
+#hero-mockup-stack .float-left-card p {
+  color: #94a3b8 !important;
+}
+
+.float-left-card span,
+#hero-mockup-stack .float-left-card span {
+  color: #ff8e4f !important;
+}
+
+/* 6. Specific overrides for streak bottom pill inside phone */
+.streak-bottom-pill,
+#phone-mockup-frame .streak-bottom-pill,
+#phone-mockup-bottom .streak-bottom-pill {
+  background-color: #050811 !important;
+  background: #050811 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.streak-bottom-pill *,
+#phone-mockup-frame .streak-bottom-pill *,
+#phone-mockup-bottom .streak-bottom-pill * {
+  color: #f1f5f9 !important;
+}
+
+.streak-bottom-pill .text-emerald-400,
+#phone-mockup-frame .streak-bottom-pill .text-emerald-400,
+#phone-mockup-bottom .streak-bottom-pill .text-emerald-400 {
+  color: #34d399 !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================
+   KINETIC TYPOGRAPHY REVEAL COLOR STYLES
+   ========================================== */
+
+section#kinetic-typography .kinetic-revealed-word,
+.kinetic-revealed-word {
+  color: #0f172a !important; /* Crisp dark slate for revealed text */
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease !important;
+}
+
+section#kinetic-typography .kinetic-revealed-word-highlight,
+.kinetic-revealed-word-highlight {
+  color: #e8601c !important;
+  text-decoration: none !important;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease !important;
+}
+
+section#kinetic-typography .kinetic-unrevealed-word,
+.kinetic-unrevealed-word {
+  color: rgba(15, 23, 42, 0.12) !important; /* Elegant subtle transparent black simulating faint 'hidden' text in light mode */
+  opacity: 0.25 !important;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+}
+
+section#kinetic-typography .kinetic-unrevealed-word:hover,
+.kinetic-unrevealed-word:hover {
+  color: rgba(15, 23, 42, 0.35) !important; /* Sophisticated gray hover state keying mystery */
+  opacity: 0.5 !important;
+}
+
+/* Dark mode overrides for kinetic typography */
+html.dark section#kinetic-typography .kinetic-revealed-word,
+html.dark .kinetic-revealed-word {
+  color: #f1f5f9 !important; /* Crisp light slate for revealed text in dark mode */
+}
+
+html.dark section#kinetic-typography .kinetic-revealed-word-highlight,
+html.dark .kinetic-revealed-word-highlight {
+  color: #ff7a3c !important;
+  text-decoration: none !important;
+}
+
+html.dark section#kinetic-typography .kinetic-unrevealed-word,
+html.dark .kinetic-unrevealed-word {
+  color: rgba(241, 245, 249, 0.12) !important; /* Elegant subtle transparent white simulating faint 'hidden' text in dark mode */
+}
+
+html.dark section#kinetic-typography .kinetic-unrevealed-word:hover,
+html.dark .kinetic-unrevealed-word:hover {
+  color: rgba(241, 245, 249, 0.35) !important; /* Sophisticated light gray hover state keying mystery */
+}
+
+
+/* ==========================================================
+   SOLID RECOVERY OVERRIDES FOR SOUND LEVER BUTTON CONTRAST
+   ========================================================== */
+
+#audio-lever-button,
+.fixed button#audio-lever-button,
+.absolute button#audio-lever-button {
+  background-color: #0f172a !important;
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+#audio-lever-button *,
+.fixed button#audio-lever-button *,
+.absolute button#audio-lever-button * {
+  color: #ffffff !important;
+}
+
+#audio-lever-button:hover,
+.fixed button#audio-lever-button:hover,
+.absolute button#audio-lever-button:hover {
+  background-color: #1e293b !important;
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+#audio-lever-button.bg-orange-600,
+.fixed button#audio-lever-button.bg-orange-600,
+.absolute button#audio-lever-button.bg-orange-600 {
+  background-color: #e8601c !important;
+  background: #e8601c !important;
+  color: #ffffff !important;
+  border: 1px solid #ff8e4f !important;
+  box-shadow: 0 10px 30px rgba(232, 96, 28, 0.35) !important;
+}
+
+#audio-lever-button.bg-orange-600 *,
+.fixed button#audio-lever-button.bg-orange-600 *,
+.absolute button#audio-lever-button.bg-orange-600 * {
+  color: #ffffff !important;
+}
+
+/* ==========================================================
+   BULLETPROOF STATS GRID PRESERVATION & PREVENT SQUISHING
+   ========================================================== */
+
+#epic-numbers .grid,
+section#epic-numbers .grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  column-gap: 2.5rem !important;
+  row-gap: 2rem !important;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  #epic-numbers .grid,
+  section#epic-numbers .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+div[id^="live-stat-"],
+#epic-numbers div[id^="live-stat-"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+div[id^="live-stat-"] span,
+#epic-numbers div[id^="live-stat-"] span {
+  display: block !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  width: 100% !important;
+}
+
+
+/* ==========================================================
+   EXPLICIT LEGIBILITY OVERRIDES FOR REAL-TIME AUDIENCE VIBE RESPONSE
+   AND AUDIT FEEDBACK DECK CARDS (LIGHT-THEME HIGH VISIBILITY)
+   ========================================================== */
+
+/* 1. Real-Time Audience Vibe Response HUD Card */
+.bg-slate-950 {
+  background-color: #0f172a !important; /* Solid dark carbon/slate background */
+  border-color: #0d9488 !important; /* Teal border accent */
+}
+.bg-slate-950,
+.bg-slate-950 * {
+  color: #ffffff !important; /* Restores crisp white text inside the dark HUD */
+}
+.bg-slate-950 p {
+  color: #cbd5e1 !important; /* Light slate text for description description hierarchy */
+}
+.bg-slate-950 .text-emerald-400 {
+  color: #34d399 !important; /* Bright mint green */
+}
+.bg-slate-950 .text-orange-400 {
+  color: #fb923c !important; /* Warm vibrant orange */
+}
+.bg-slate-950 .text-teal-300 {
+  color: #2dd4bf !important; /* Bright turquoise */
+}
+
+/* Specificity Booster overrides to force text layers inside the Vibe HUD and Dialogue Auditor to be visible and have excellent contrast */
+.bg-\[\#080d19\]\/90 .bg-slate-950,
+.bg-\[\#080d19\]\/90 .bg-slate-950 * {
+  color: #ffffff !important;
+}
+
+.bg-\[\#080d19\]\/90 .bg-slate-950 .text-teal-300 {
+  color: #2dd4bf !important; /* Bright turquoise icon label */
+}
+
+.bg-\[\#080d19\]\/90 .bg-slate-950 .text-orange-400 {
+  color: #fb923c !important; /* Bright orange status text */
+}
+
+.bg-\[\#080d19\]\/90 .bg-slate-950 .text-emerald-400 {
+  color: #34d399 !important; /* Robust green metric */
+}
+
+.bg-\[\#080d19\]\/90 .bg-slate-950 .text-slate-400 {
+  color: #94a3b8 !important; /* Proper legible light gray labels inside the dark card HUD */
+}
+
+.bg-\[\#080d19\]\/90 .bg-slate-950 p {
+  color: #cbd5e1 !important; /* Legible content description */
+}
+
+/* 1.1 Textarea Specific Override - ensure crystal clear visibility */
+.bg-\[\#080d19\]\/90 #cliche-scanned-text,
+#cliche-scanned-text {
+  background-color: #0d1527 !important; /* Clean rich navy dark surface */
+  color: #ffffff !important; /* Crisp white text */
+  -webkit-text-fill-color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.bg-\[\#080d19\]\/90 #cliche-scanned-text::placeholder,
+#cliche-scanned-text::placeholder {
+  color: #64748b !important; /* Muted gray placeholder */
+  opacity: 1 !important;
+}
+
+/* 2. Audit Feedback Deck Cards - Sophisticated high-contrast panels with outstanding reading comfort */
+/* Card 1: WHAT IS GOOD */
+.bg-emerald-950\/75,
+.bg-emerald-950\/40,
+.bg-emerald-950 {
+  background-color: #f0fdf4 !important; /* Fresh light green backdrop */
+  border-color: #10b981 !important; /* Solid emerald border */
+}
+.bg-emerald-950\/75,
+.bg-emerald-950\/75 *,
+.bg-emerald-950\/40,
+.bg-emerald-950\/40 *,
+.bg-emerald-950,
+.bg-emerald-950 * {
+  color: #064e3b !important; /* Deep forest green texts for absolute reading comfort */
+}
+.bg-emerald-950\/75 .text-emerald-350,
+.bg-emerald-950\/75 .text-emerald-400,
+.bg-emerald-950\/40 .text-emerald-350,
+.bg-emerald-950\/40 .text-emerald-400,
+.bg-emerald-950 .text-emerald-350,
+.bg-emerald-950 .text-emerald-400 {
+  color: #059669 !important; /* Solid vibrant mint green accents */
+}
+
+/* Card 2: WHAT IS NOT GOOD */
+.bg-rose-950\/75,
+.bg-rose-950\/40,
+.bg-rose-950 {
+  background-color: #fff1f2 !important; /* Pure rose mist backdrop */
+  border-color: #f43f5e !important; /* Strong crimson border */
+}
+.bg-rose-950\/75,
+.bg-rose-950\/75 *,
+.bg-rose-950\/40,
+.bg-rose-950\/40 *,
+.bg-rose-950,
+.bg-rose-950 * {
+  color: #9f1239 !important; /* Deep berry red texts for elite contrast */
+}
+.bg-rose-950\/75 .text-rose-350,
+.bg-rose-950\/75 .text-rose-400,
+.bg-rose-950\/40 .text-rose-350,
+.bg-rose-950\/40 .text-rose-400,
+.bg-rose-950 .text-rose-350,
+.bg-rose-950 .text-rose-400 {
+  color: #e11d48 !important; /* Solid warm red accents */
+}
+
+/* Teal-themed inner indicators and badges */
+.bg-teal-950\/60,
+.bg-teal-950\/70,
+.bg-teal-950\/80,
+.bg-teal-950 {
+  background-color: #f0fdfa !important; /* Fresh light-teal aura */
+  border-color: #14b8a6 !important;
+}
+.bg-teal-950\/60 *,
+.bg-teal-950\/70 *,
+.bg-teal-950\/80 *,
+.bg-teal-950 *,
+.bg-teal-950\/60,
+.bg-teal-950\/70,
+.bg-teal-950\/80,
+.bg-teal-950 {
+  color: #0d9488 !important; /* Vivid turquoise core */
+}
+
+/* Orange/Gold-themed inner indicators and badges */
+.bg-orange-950\/50,
+.bg-orange-950\/60,
+.bg-orange-950 {
+  background-color: #fff7ed !important; /* Gentle warm peach background */
+  border-color: rgba(234, 88, 12, 0.2) !important;
+}
+.bg-orange-950\/50 *,
+.bg-orange-950\/60 *,
+.bg-orange-950 *,
+.bg-orange-950\/50,
+.bg-orange-950\/60,
+.bg-orange-950 {
+  color: #ea580c !important; /* Solid vibrant orange text */
+  font-weight: 700 !important;
+}
+
+/* Card 3: WHAT TO CHANGE */
+.bg-indigo-950\/75 {
+  background-color: #f5f3ff !important; /* Gentle lavender aura backdrop */
+  border-color: #8b5cf6 !important; /* Solid velvet violet border */
+}
+.bg-indigo-950\/75,
+.bg-indigo-950\/75 * {
+  color: #3b0764 !important; /* Rich eggplant purple texts for premium readability */
+}
+.bg-indigo-950\/75 .text-indigo-300 {
+  color: #7c3aed !important; /* Lavender violet state headers */
+}
+.bg-indigo-950\/75 .text-rose-400 {
+  color: #dc2626 !important; /* Red original slop words */
+}
+.bg-indigo-950\/75 .text-emerald-400 {
+  color: #16a34a !important; /* Clear green replacement words */
+}
+.bg-indigo-950\/75 .bg-black\/45 {
+  background-color: #ffffff !important; /* Pure crisp white capsule inside */
+  border: 1px solid #ddd6fe !important; /* Subtle soft lavender border */
+}
+.bg-indigo-950\/75 .text-slate-550,
+.bg-indigo-950\/75 .text-slate-500 {
+  color: #6b21a8 !important; /* Violet connectors */
+}
+
+
+/* ==========================================
+   OBSIDIAN DARK THEME ROOT OVERRIDES
+   ========================================== */
+
+html.dark, 
+html.dark body {
+  background: radial-gradient(circle at 10% 20%, #0c2020 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, #201a0d 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, #030611 0%, #010309 100%) !important;
+  color: #f1f5f9 !important;
+}
+
+html.dark #tsoc-portal, 
+html.dark .min-h-screen {
+  background: transparent !important;
+  color: #f1f5f9 !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #ffffff !important;
+}
+
+/* Outer layout panels that need solid background spacing */
+html.dark .bg-\[\#050b18\]:not(#tsoc-portal),
+html.dark .bg-\[\#030712\].py-2 {
+  background-color: #050b18 !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 1. Header Billboards, Major Widget Cards & High-Impact Section Hero blocks */
+html.dark .bg-\[\#091122\]\/95,
+html.dark .bg-\[\#091122\]\/90,
+html.dark .bg-\[\#091122\],
+html.dark .bg-\[\#030712\]\/60,
+html.dark .bg-\[\#080d19\]\/90,
+html.dark .bg-\[\#080d19\]\/80,
+html.dark .bg-\[\#080d19\],
+html.dark .bg-\[\#0c101c\],
+html.dark .bg-gradient-to-br.from-\[\#0c101c\] {
+  background: linear-gradient(135deg, #091122 0%, #050b18 50%, #020408 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.61), 
+              0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  color: #e2e8f0 !important;
+}
+
+/* Nesting support inside those major cards and screens */
+html.dark .bg-\[\#091122\]\/95 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a), 
+html.dark .bg-\[\#091122\]\/90 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a), 
+html.dark .bg-\[\#091122\] *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#080d19\]\/90 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a), 
+html.dark .bg-\[\#080d19\] *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a), 
+html.dark .bg-\[\#0c101c\] *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a) {
+  color: #cbd5e1 !important; /* Reverts light text readability */
+}
+
+/* Restores bright text colors for explicit header classes inside card elements in Dark Mode */
+html.dark .bg-\[\#091122\]\/95 .text-white,
+html.dark .bg-\[\#091122\]\/90 .text-white,
+html.dark .bg-\[\#091122\] .text-white,
+html.dark .bg-\[\#080d19\]\/90 .text-white,
+html.dark .bg-\[\#080d19\] .text-white,
+html.dark .bg-\[\#0c101c\] .text-white,
+html.dark .bg-gradient-to-br.from-\[\#0c101c\] .text-white,
+html.dark .bg-\[\#091122\]\/90 h1, html.dark .bg-\[\#091122\]\/90 h2, html.dark .bg-\[\#091122\]\/90 h3, html.dark .bg-\[\#091122\]\/90 h4,
+html.dark .bg-\[\#080d19\]\/90 h1, html.dark .bg-\[\#080d19\]\/90 h2, html.dark .bg-\[\#080d19\]\/90 h3, html.dark .bg-\[\#080d19\]\/90 h4,
+html.dark .bg-\[\#0c101c\] h4, html.dark .bg-\[\#0c101c\] h3,
+html.dark #hero-habitline .text-white,
+html.dark #hero-habitline h1,
+html.dark #curriculum-track h2,
+html.dark #systemSpecs-header h1,
+html.dark #contact-desk h1,
+html.dark section h1.text-white,
+html.dark section h2.text-white,
+html.dark section h3.text-white,
+html.dark .text-slate-200.font-sans h1.text-white,
+html.dark .text-slate-200.font-sans h2.text-white {
+  color: #ffffff !important;
+}
+
+/* 2. Outer edge custom lines mapped back to ambient dark transparency borders */
+html.dark .border-white\/5,
+html.dark .border-white\/10,
+html.dark .border-white\/15,
+html.dark .border-white\/20,
+html.dark .border-white\/30,
+html.dark .border-navy-900,
+html.dark .border-slate-800,
+html.dark .border-navy-990 {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* 3. Inner Metadata Containers */
+html.dark .bg-\[\#030712\],
+html.dark .bg-\[\#030712\]\/90,
+html.dark .bg-\[\#030712\]\/95,
+html.dark .bg-\[\#030712\]\/85,
+html.dark .bg-\[\#030712\]\/70,
+html.dark .bg-\[\#030712\]\/60,
+html.dark .bg-navy-950,
+html.dark .bg-navy-950\/40,
+html.dark .bg-navy-950\/60,
+html.dark .bg-navy-950\/80,
+html.dark .bg-\[\#050b18\]\/90,
+html.dark .bg-\[\#080d1a\],
+html.dark .bg-\[\#0a101f\]\/90 {
+  background-color: #030712 !important;
+  background: #030712 !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .bg-\[\#030712\] *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#030712\]\/90 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#030712\]\/95 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#030712\]\/85 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#030712\]\/70 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#030712\]\/60 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-navy-950 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-navy-950\/40 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-navy-950\/60 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-navy-950\/80 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#050b18\]\/90 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a) {
+  color: #94a3b8 !important;
+}
+
+html.dark .bg-\[\#0d1017\],
+html.dark .bg-\[\#12141c\],
+html.dark .bg-\[\#12141c\]\/90 {
+  background-color: #0d1017 !important;
+  background: #0d1017 !important;
+  border-color: rgba(234, 88, 12, 0.3) !important;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .bg-\[\#0d1017\] *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#12141c\] *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a),
+html.dark .bg-\[\#12141c\]\/90 *:not([class*="text-"]):not(button):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(a) {
+  color: #cbd5e1 !important;
+}
+
+/* Saturated indicators in metadata containers */
+html.dark .bg-\[\#030712\] .text-teal-400,
+html.dark .bg-\[\#030712\]\/90 .text-teal-400,
+html.dark .bg-\[\#030712\]\/85 .text-teal-400,
+html.dark .bg-\[\#030712\]\/70 .text-teal-400,
+html.dark .bg-\[\#030712\]\/60 .text-teal-400,
+html.dark .bg-\[\#030712\] .text-emerald-400,
+html.dark .bg-\[\#030712\]\/90 .text-emerald-400,
+html.dark .bg-\[\#030712\]\/85 .text-emerald-400,
+html.dark .bg-\[\#030712\]\/70 .text-emerald-400,
+html.dark .bg-\[\#030712\]\/60 .text-emerald-400,
+html.dark .bg-navy-950\/60 .text-teal-400,
+html.dark .text-teal-400 {
+  color: #2dd4bf !important;
+}
+
+html.dark .bg-\[\#030712\]\/90 strong,
+html.dark .bg-\[\#030712\]\/90 .text-white {
+  color: #ffffff !important;
+}
+
+/* Micro-chips and orange markers */
+html.dark .bg-\[\#132549\]\/40,
+html.dark .bg-\[\#e8601c\]\/10,
+html.dark .bg-orange-500\/10 {
+  background-color: rgba(234, 88, 12, 0.15) !important;
+  border-color: rgba(234, 88, 12, 0.3) !important;
+}
+
+html.dark .bg-\[\#132549\]\/40,
+html.dark .bg-\[\#e8601c\]\/10,
+html.dark .bg-orange-500\/10,
+html.dark .bg-\[\#132549\]\/40 *,
+html.dark .bg-\[\#e8601c\]\/10 *,
+html.dark .bg-orange-500\/10 * {
+  color: #f97316 !important;
+}
+
+/* Specific text translation values */
+html.dark .text-slate-900,
+html.dark h1.text-slate-900,
+html.dark h2.text-slate-900,
+html.dark h3.text-slate-900,
+html.dark h4.text-slate-900,
+html.dark p.text-slate-900,
+html.dark span.text-slate-900,
+html.dark select.text-slate-900,
+html.dark input.text-slate-900 { 
+  color: #f1f5f9 !important; 
+}
+
+html.dark .text-slate-800,
+html.dark h1.text-slate-800,
+html.dark h2.text-slate-800,
+html.dark h3.text-slate-800,
+html.dark h4.text-slate-800,
+html.dark p.text-slate-800,
+html.dark span.text-slate-800 { 
+  color: #e2e8f0 !important; 
+}
+
+html.dark .text-slate-705,
+html.dark .text-slate-700 { 
+  color: #cbd5e1 !important; 
+}
+
+html.dark .text-slate-650,
+html.dark .text-slate-600 { 
+  color: #94a3b8 !important; 
+}
+
+html.dark .text-slate-100 { color: #f1f5f9 !important; }
+html.dark .text-slate-200 { color: #e2e8f0 !important; }
+html.dark .text-slate-300 { color: #cbd5e1 !important; }
+html.dark .text-slate-450 { color: #94a3b8 !important; }
+html.dark .text-slate-550 { color: #94a3b8 !important; }
+html.dark .text-\[\#cbd5e0\], html.dark .text-\[\#a0aec0\] { color: #cbd5e0 !important; }
+
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;   /* slate-400 — 5.8:1 on dark navy background */
+}
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;   /* was #64748b (4.2:1) → now 5.8:1 on dark bg */
+}
+
+/* Admissions tab/curriculum card containers */
+html.dark .max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] {
+  background: linear-gradient(135deg, #030712 0%, #050b18 50%, #020408 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.6) !important;
+}
+html.dark .max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] * {
+  color: #cbd5e1 !important;
+}
+html.dark .max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] h4 {
+  color: #ffffff !important;
+}
+html.dark .max-w-4xl.mx-auto.bg-gradient-to-br.from-\[\#030712\].to-\[\#080d19\] .persona-image-overlay {
+  display: none !important;
+}
+
+/* Inactive and Active Tab Buttons */
+html.dark button[id^="persona-tab-"][class*="bg-[#080d19]/90"],
+html.dark button[id^="persona-tab-"][class*="text-slate-400"] {
+  background-color: #0b0f19 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+html.dark button[id^="persona-tab-"][class*="bg-[#080d19]/90"]:hover,
+html.dark button[id^="persona-tab-"][class*="text-slate-400"]:hover {
+  background-color: #121829 !important;
+  color: #ffffff !important;
+}
+html.dark button[id^="persona-tab-"][class*="bg-white"] {
+  background-color: #0f766e !important;
+  color: #ffffff !important;
+  border-color: rgba(45, 212, 191, 0.3) !important;
+}
+
+html.dark button[id^="scheduler-task-"][class*="bg-orange-600"] {
+  background-color: rgba(234, 88, 12, 0.1) !important;
+  background: rgba(234, 88, 12, 0.1) !important;
+  border-color: #ea580c !important;
+  color: #f97316 !important;
+}
+html.dark button[id^="scheduler-task-"][class*="bg-orange-600"] * {
+  color: #f97316 !important;
+}
+html.dark button[id^="scheduler-task-"][class*="bg-orange-600"] p {
+  color: #cbd5e1 !important;
+}
+
+/* Floating Pill Navigation bar in Dark Mode */
+html.dark #habitline-nav {
+  background-color: #050b18 !important;
+  background: rgba(5, 11, 24, 0.93) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6) !important;
+}
+html.dark #habitline-nav .hidden.md\:flex {
+  background-color: #030712 !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+html.dark #habitline-nav .text-slate-400 {
+  color: #94a3b8 !important;
+}
+html.dark #habitline-nav .text-slate-400:hover {
+  color: #ffffff !important;
+}
+html.dark #habitline-nav .text-white,
+html.dark #habitline-nav h1 {
+  color: #ffffff !important;
+}
+html.dark .bg-teal-950\/80 {
+  background-color: #0f766e !important;
+  color: #ffffff !important;
+  border-color: rgba(45, 212, 191, 0.3) !important;
+}
+html.dark .bg-teal-950\/80 * {
+  color: #ffffff !important;
+}
+
+/* Nav circular small buttons in Dark Mode */
+html.dark #habitline-nav button.hidden.sm\:flex,
+html.dark #habitline-nav button.w-10 {
+  background-color: #0c101c !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+html.dark #habitline-nav button.hidden.sm\:flex:hover,
+html.dark #habitline-nav button.w-10:hover {
+  background-color: #121829 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Assessment analyzer page elements */
+html.dark .bg-emerald-950\/40,
+html.dark .bg-emerald-950\/75,
+html.dark .bg-emerald-950 {
+  background-color: rgba(6, 78, 59, 0.25) !important;
+  border-color: #10b981 !important;
+}
+html.dark .bg-emerald-950\/40,
+html.dark .bg-emerald-950\/40 *,
+html.dark .bg-emerald-950\/75,
+html.dark .bg-emerald-950\/75 *,
+html.dark .bg-emerald-950,
+html.dark .bg-emerald-950 * {
+  color: #8af7cd !important;
+}
+html.dark .bg-rose-950\/40,
+html.dark .bg-rose-950\/75,
+html.dark .bg-rose-950 {
+  background-color: rgba(159, 18, 57, 0.2) !important;
+  border-color: #f43f5e !important;
+}
+html.dark .bg-rose-950\/40,
+html.dark .bg-rose-950\/40 *,
+html.dark .bg-rose-950\/75,
+html.dark .bg-rose-950\/75 *,
+html.dark .bg-rose-950,
+html.dark .bg-rose-950 * {
+  color: #ffa1b2 !important;
+}
+html.dark .bg-indigo-950\/75 {
+  background-color: rgba(59, 7, 100, 0.25) !important;
+  border-color: #8b5cf6 !important;
+}
+html.dark .bg-indigo-950\/75,
+html.dark .bg-indigo-950\/75 * {
+  color: #ebd5ff !important;
+}
+html.dark .bg-indigo-950\/75 .bg-black\/45 {
+  background-color: #0c101c !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+html.dark .bg-indigo-950\/75 .text-slate-550,
+html.dark .bg-indigo-950\/75 .text-slate-500 {
+  color: #d8b4fe !important;
+}
+
+/* Ensure inputs, maps, cards lists and general components fit perfectly in Dark Mode */
+html.dark select,
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="number"],
+html.dark input[type="tel"] {
+  background-color: #030712 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark select option {
+  background-color: #030712 !important;
+  color: #ffffff !important;
+}
+
+/* Interactive course grid lists, spec summaries, form fields, and expert frames */
+html.dark img {
+  opacity: 0.9 !important;
+}
+
+/* PROTECTION FOR LIGHT BACKGROUNDS AND PRESERVING DARK TEXT IN DARK MODE */
+html.dark .bg-white,
+html.dark .bg-white *,
+html.dark .bg-\[\#f5f5f5\],
+html.dark .bg-\[\#f5f5f5\] *,
+html.dark .bg-\[\#F5F5F5\],
+html.dark .bg-\[\#F5F5F5\] *,
+html.dark .bg-slate-50,
+html.dark .bg-slate-50 *,
+html.dark .bg-slate-100,
+html.dark .bg-slate-100 *,
+html.dark .bg-slate-200,
+html.dark .bg-slate-200 *,
+html.dark .bg-orange-50,
+html.dark .bg-orange-50 *,
+html.dark .bg-teal-50,
+html.dark .bg-teal-50 *,
+html.dark .bg-indigo-50,
+html.dark .bg-indigo-50 * {
+  --tw-text-opacity: 1 !important;
+}
+
+html.dark .bg-white .text-slate-900,
+html.dark .bg-white.text-slate-900,
+html.dark .bg-\[\#f5f5f5\] .text-slate-900,
+html.dark .bg-\[\#f5f5f5\].text-slate-900,
+html.dark .bg-\[\#F5F5F5\] .text-slate-900,
+html.dark .bg-\[\#F5F5F5\].text-slate-900,
+html.dark .bg-slate-50 .text-slate-900,
+html.dark .bg-slate-100 .text-slate-900,
+html.dark .bg-slate-200 .text-slate-900,
+html.dark .bg-white h1,
+html.dark .bg-white h2,
+html.dark .bg-white h3,
+html.dark .bg-white h4,
+html.dark .bg-white h5,
+html.dark .bg-white h6,
+html.dark .bg-white p,
+html.dark .bg-white blockquote,
+html.dark .bg-white span:not(.text-orange-500):not(.text-teal-400):not(.text-teal-500):not(.text-rose-400):not(.text-indigo-400),
+html.dark .bg-\[\#f5f5f5\] h1,
+html.dark .bg-\[\#f5f5f5\] h2,
+html.dark .bg-\[\#f5f5f5\] h3,
+html.dark .bg-\[\#f5f5f5\] h4,
+html.dark .bg-\[\#f5f5f5\] p,
+html.dark .bg-\[\#f5f5f5\] blockquote,
+html.dark .bg-\[\#f5f5f5\] span:not(.text-orange-500):not(.text-teal-400):not(.text-teal-500):not(.text-rose-400):not(.text-indigo-400),
+html.dark .bg-\[\#F5F5F5\] h1,
+html.dark .bg-\[\#F5F5F5\] h2,
+html.dark .bg-\[\#F5F5F5\] h3,
+html.dark .bg-\[\#F5F5F5\] h4,
+html.dark .bg-\[\#F5F5F5\] p,
+html.dark .bg-\[\#F5F5F5\] blockquote,
+html.dark .bg-\[\#F5F5F5\] span:not(.text-orange-500):not(.text-teal-400):not(.text-teal-500):not(.text-rose-400):not(.text-indigo-400) {
+  color: #0f172a !important;
+}
+
+html.dark .bg-white .text-slate-800,
+html.dark .bg-white.text-slate-800,
+html.dark .bg-\[\#f5f5f5\] .text-slate-800,
+html.dark .bg-\[\#f5f5f5\].text-slate-800,
+html.dark .bg-\[\#F5F5F5\] .text-slate-800,
+html.dark .bg-\[\#F5F5F5\].text-slate-800,
+html.dark .bg-slate-50 .text-slate-800 {
+  color: #1e293b !important;
+}
+
+html.dark .bg-white .text-slate-705,
+html.dark .bg-white.text-slate-705,
+html.dark .bg-white .text-slate-700,
+html.dark .bg-white.text-slate-700,
+html.dark .bg-\[\#f5f5f5\] .text-slate-705,
+html.dark .bg-\[\#f5f5f5\].text-slate-705,
+html.dark .bg-\[\#f5f5f5\] .text-slate-700,
+html.dark .bg-\[\#f5f5f5\].text-slate-700,
+html.dark .bg-\[\#F5F5F5\] .text-slate-705,
+html.dark .bg-\[\#F5F5F5\].text-slate-705,
+html.dark .bg-\[\#F5F5F5\] .text-slate-700,
+html.dark .bg-\[\#F5F5F5\].text-slate-700,
+html.dark .bg-slate-50 .text-slate-705,
+html.dark .bg-slate-50 .text-slate-700 {
+  color: #334155 !important;
+}
+
+html.dark .bg-white .text-slate-650,
+html.dark .bg-white.text-slate-650,
+html.dark .bg-white .text-slate-600,
+html.dark .bg-white.text-slate-600,
+html.dark .bg-\[\#f5f5f5\] .text-slate-650,
+html.dark .bg-\[\#f5f5f5\].text-slate-650,
+html.dark .bg-\[\#f5f5f5\] .text-slate-600,
+html.dark .bg-\[\#f5f5f5\].text-slate-600,
+html.dark .bg-\[\#F5F5F5\] .text-slate-650,
+html.dark .bg-\[\#F5F5F5\].text-slate-650,
+html.dark .bg-\[\#F5F5F5\] .text-slate-600,
+html.dark .bg-\[\#F5F5F5\].text-slate-600,
+html.dark .bg-slate-50 .text-slate-650,
+html.dark .bg-slate-50 .text-slate-600 {
+  color: #475569 !important;
+}
+
+html.dark .bg-white .text-slate-550,
+html.dark .bg-white.text-slate-550,
+html.dark .bg-white .text-slate-500,
+html.dark .bg-white.text-slate-500,
+html.dark .bg-\[\#f5f5f5\] .text-slate-550,
+html.dark .bg-\[\#f5f5f5\].text-slate-550,
+html.dark .bg-\[\#f5f5f5\] .text-slate-500,
+html.dark .bg-\[\#f5f5f5\].text-slate-500,
+html.dark .bg-\[\#F5F5F5\] .text-slate-550,
+html.dark .bg-\[\#F5F5F5\].text-slate-550,
+html.dark .bg-\[\#F5F5F5\] .text-slate-500,
+html.dark .bg-\[\#F5F5F5\].text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Smooth theme cross-fade transition support */
+.theme-toggle-transition,
+.theme-toggle-transition * {
+  transition: background 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 600ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ==========================================================
+   TRUST LANDMARKS ACHIEVEMENT CARDS - HIGH LEGIBILITY OVERRIDES
+   ========================================================== */
+.landmark-gradient-overlay {
+  background: linear-gradient(to top, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.6) 45%, transparent 100%) !important;
+}
+
+[id^="achievement-card-"] h4 {
+  color: #ffffff !important;
+}
+
+[id^="achievement-card-"] .text-slate-300 {
+  color: #e2e8f0 !important;   /* bright on dark gradient overlay */
+}
+
+[id^="achievement-card-"] .text-slate-400 {
+  color: #e2e8f0 !important;   /* bright on dark gradient overlay */
+}
+
+/* Protect all direct text inside achievement cards from global slate overrides */
+[id^="achievement-card-"] * {
+  color: #e2e8f0 !important;
+}
+[id^="achievement-card-"] h4 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================
+   UPPER MICROSTRIP CONTRAST & LEGIBILITY OVERRIDES
+   ========================================================== */
+#tsoc-upper-microstrip,
+html #tsoc-upper-microstrip {
+  background-color: #091122 !important; /* solid deep space dark theme backdrop for contrast */
+  background: #091122 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#tsoc-upper-microstrip * {
+  color: #e2e8f0 !important; /* Crisp high contrast white-slate text */
+}
+
+#tsoc-upper-microstrip a {
+  color: #cbd5e1 !important;
+  transition: color 250ms ease;
+}
+
+#tsoc-upper-microstrip a:hover {
+  color: #ffffff !important;
+}
+
+#tsoc-upper-microstrip span {
+  color: #cbd5e1 !important;
+}
+
+html.dark #tsoc-upper-microstrip {
+  background-color: #030712 !important;
+  background: #030712 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+html.dark #tsoc-upper-microstrip * {
+  color: #94a3b8 !important;
+}
+
+html.dark #tsoc-upper-microstrip a:hover {
+  color: #ffffff !important;
+}
+
+/* ==========================================================
+   VIBE CALIBRATED INDEX OVERLAY LEGIBILITY OVERRIDES
+   ========================================================== */
+#vibe-calibrated-index-box,
+html #vibe-calibrated-index-box {
+  background-color: #050b18 !important; /* solid deep dark theme backing for ultimate readability */
+  background: rgba(5, 11, 24, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+#vibe-calibrated-index-box span {
+  color: #2dd4bf !important; /* bright turquoise text for eye-catching label */
+  font-weight: 900 !important;
+}
+
+#vibe-calibrated-index-box h4 {
+  color: #fb923c !important; /* crisp bright orange selected state text */
+  font-weight: 900 !important;
+}
+
+#vibe-calibrated-index-box p {
+  color: #f1f5f9 !important; /* pristine off-white core quote text ensuring absolute maximum readability */
+  font-weight: 700 !important;
+}
+
+
+/* ==========================================================
+   TODAY'S SPEECH GOAL CARD HIGH-CONTRAST & UX CALIBRATION
+   ========================================================== */
+#today-speech-goal-card,
+html #today-speech-goal-card,
+#today-speech-goal-card-mob,
+html #today-speech-goal-card-mob,
+html.dark #today-speech-goal-card-mob {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15), 
+              0 0 40px rgba(13, 148, 136, 0.08) !important;
+}
+
+/* Ensure headings inside are very dark for ultimate readability */
+#today-speech-goal-card h4,
+#today-speech-goal-card-mob h4 {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+#today-speech-goal-card p,
+#today-speech-goal-card-mob p {
+  color: #475569 !important;
+  font-weight: bold !important;
+}
+
+#today-speech-goal-card span,
+#today-speech-goal-card-mob span {
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+/* Brighten and stabilize the three feedback rings inside the goal card */
+#today-speech-goal-card div[class*="rounded-full"],
+#today-speech-goal-card-mob div[class*="rounded-full"] {
+  font-weight: 900 !important;
+}
+
+/* Purity Indicator Ring override (Orange contrast) */
+#today-speech-goal-card div[class*="border-[#e8601c]"],
+#today-speech-goal-card-mob div[class*="border-\[\#e8601c\]"] {
+  border-color: #ea580c !important;
+  color: #ea580c !important;
+  background-color: #fff7ed !important;
+  box-shadow: inset 0 2px 4px rgba(234, 88, 12, 0.05), 0 3px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Tone Indicator Ring override (Teal contrast) */
+#today-speech-goal-card div[class*="border-teal-500"],
+#today-speech-goal-card-mob div[class*="border-teal-500"] {
+  border-color: #0d9488 !important;
+  color: #0d9488 !important;
+  background-color: #f0fdfa !important;
+  box-shadow: inset 0 2px 4px rgba(13, 148, 136, 0.05), 0 3px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Poise Indicator Ring override (Indigo contrast) */
+#today-speech-goal-card div[class*="border-indigo-500"],
+#today-speech-goal-card-mob div[class*="border-indigo-500"] {
+  border-color: #4f46e5 !important;
+  color: #4f46e5 !important;
+  background-color: #f5f3ff !important;
+  box-shadow: inset 0 2px 4px rgba(79, 70, 229, 0.05), 0 3px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Absolute lock on their name tags under the circles */
+#today-speech-goal-card span[class*="tracking-wider"],
+#today-speech-goal-card-mob span[class*="tracking-wider"] {
+  color: #64748b !important;
+  font-weight: 900 !important;
+  font-size: 8px !important;
+}
+
+#today-speech-goal-card span[class*="tracking-wider"]:first-of-type,
+#today-speech-goal-card-mob span[class*="tracking-wider"]:first-of-type {
+  color: #c2410c !important; /* Orange label text for purity */
+}
+
+#today-speech-goal-card span[class*="tracking-wider"]:nth-of-type(2),
+#today-speech-goal-card-mob span[class*="tracking-wider"]:nth-of-type(2) {
+  color: #0f766e !important; /* Teal label text for tone */
+}
+
+#today-speech-goal-card span[class*="tracking-wider"]:nth-of-type(3),
+#today-speech-goal-card-mob span[class*="tracking-wider"]:nth-of-type(3) {
+  color: #4338ca !important; /* Indigo label text for poise */
+}
+
+/* ==========================================
+   NAVBAR — LIGHT MODE ICON BUTTON FIXES
+   Existing rules miss w-8 (theme toggle, hamburger) and w-9 (admissions icon).
+   These selectors catch all remaining dark-background icon buttons.
+   ========================================== */
+
+/* Theme toggle (w-8), hamburger (w-8), admissions icon (w-9) */
+#habitline-nav button.w-8,
+#habitline-nav button.w-9 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+#habitline-nav button.w-8:hover,
+#habitline-nav button.w-9:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* Ensure SVG icons inside these buttons are visible */
+#habitline-nav button.w-8 svg,
+#habitline-nav button.w-9 svg {
+  color: inherit !important;
+}
+
+/* Moon icon specifically */
+#habitline-nav button.w-8 .text-indigo-300 {
+  color: #6366f1 !important;
+}
+
+/* Sun icon specifically */
+#habitline-nav button.w-8 .text-amber-400 {
+  color: #d97706 !important;
+}
+
+/* Dark mode — restore original dark styling */
+html.dark #habitline-nav button.w-8,
+html.dark #habitline-nav button.w-9 {
+  background-color: rgba(5, 11, 24, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: #94a3b8 !important;
+}
+html.dark #habitline-nav button.w-8:hover,
+html.dark #habitline-nav button.w-9:hover {
+  background-color: #0c1322 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   FOOTER — LIGHT MODE HIGH CONTRAST FIXES
+   These rules run last so they win over earlier overrides.
+   ========================================== */
+
+/* Nav link columns (Quick Links, Academic, Support) */
+footer ul li a {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+footer ul li a:hover {
+  color: #ea580c !important;
+}
+
+/* Address, phone, email body text */
+footer .text-slate-800,
+footer a.text-slate-800 {
+  color: #0f172a !important;
+}
+
+/* Tagline and secondary body copy */
+footer .text-slate-700,
+footer p.text-slate-700 {
+  color: #1e293b !important;
+}
+
+/* Registry / Support email lines */
+footer div.text-slate-700,
+footer div.text-slate-700 a {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+/* Bottom attribution bar */
+footer div.text-slate-700.font-mono {
+  color: #334155 !important;
+}
+
+/* Dark mode — restore original soft colors */
+html.dark footer ul li a {
+  color: #94a3b8 !important;
+  font-weight: 400 !important;
+}
+html.dark footer ul li a:hover {
+  color: #f97316 !important;
+}
+html.dark footer .text-slate-800,
+html.dark footer a.text-slate-800 {
+  color: #94a3b8 !important;
+}
+html.dark footer .text-slate-700,
+html.dark footer p.text-slate-700,
+html.dark footer div.text-slate-700,
+html.dark footer div.text-slate-700 a {
+  color: #64748b !important;
+  font-weight: 400 !important;
+}
+
+/* ── Mixed Mode Delivery Banner — force visibility ── */
+.mixed-mode-banner h2,
+.mixed-mode-banner h2 * {
+  color: #ffffff !important;
+}
+.mixed-mode-banner h2 .mixed-mode-teal {
+  color: #5eead4 !important;
+}
+.mixed-mode-banner p,
+.mixed-mode-banner p * {
+  color: #e2e8f0 !important;
+}
+.mixed-mode-banner strong.mixed-mode-centre {
+  color: #99f6e4 !important;
+  font-weight: 900 !important;
+}
+.mixed-mode-banner .mixed-mode-badge {
+  color: #ccfbf1 !important;
+}
+.mixed-mode-banner .mixed-mode-online-label {
+  color: #ffffff !important;
+}
+.mixed-mode-banner .mixed-mode-online-sub {
+  color: #cbd5e1 !important;
+}
+.mixed-mode-banner .mixed-mode-physical-label {
+  color: #ccfbf1 !important;
+}
+.mixed-mode-banner .mixed-mode-physical-sub {
+  color: #99f6e4 !important;
+}
+
+/* ── Admissions wizard — force dark panel + visible inputs ── */
+#admissions-root .lg\:col-span-7,
+#admissions-root [class*="col-span-7"] {
+  background: #091122 !important;
+  color: #e2e8f0 !important;
+}
+
+#admissions-root input,
+#admissions-root textarea {
+  background: #0d1b2e !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+
+#admissions-root input::placeholder,
+#admissions-root textarea::placeholder {
+  color: rgba(148,163,184,0.6) !important;
+}
+
+#admissions-root input:focus,
+#admissions-root textarea:focus {
+  border-color: #14b8a6 !important;
+  outline: none !important;
+}
+
+
+
+
+
+
+
+
