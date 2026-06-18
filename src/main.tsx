@@ -1,10 +1,28 @@
-import {StrictMode} from 'react';
+import {StrictMode, Component} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
+class ErrorBoundary extends Component<{children: React.ReactNode}, {error: Error | null}> {
+  state = { error: null };
+  static getDerivedStateFromError(error: Error) { return { error }; }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{padding:'40px',fontFamily:'monospace',color:'#e8601c',background:'#050b18',minHeight:'100vh'}}>
+          <h2 style={{color:'#fff'}}>T-SOC — Startup Error</h2>
+          <pre style={{fontSize:'12px',color:'#e8601c'}}>{String(this.state.error)}</pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </StrictMode>,
 );
